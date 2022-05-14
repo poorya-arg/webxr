@@ -71,7 +71,6 @@ export default function HomeContainer(){
       <Box position={[0,0,0]}/>
       </Suspense>
       <Suspense fallback={null}>
-      <Background />
       </Suspense>
       <Floor color="#FFF" position={[0,-0.5,0]}/>
     </ARCanvas>
