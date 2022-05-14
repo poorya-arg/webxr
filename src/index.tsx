@@ -8,6 +8,7 @@ import thunk from "redux-thunk"
 import reducer, { IReduxStateType } from "./store/reducer"
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import { DispatchType, IssuesAction } from "./store/types";
+import './index.css';
 
 const client = new ApolloClient({
   uri: "https://api.github.com/graphql",
