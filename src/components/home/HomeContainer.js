@@ -22,11 +22,11 @@ export default function HomeContainer(){
       ref.current.rotation.y += 0.01
     })
     return <mesh ref={ref} {...props}>
-    <sphereBufferGeometry args={[1,100,500]}/>
+    <sphereBufferGeometry args={[0.5,100,500]}/>
     <meshPhysicalMaterial
     map={texture}
     //  color="red"
-      // transparent
+      // transparent  
       // roughness={0}
       // clearcoat={1}
       // transmission={0.8}
