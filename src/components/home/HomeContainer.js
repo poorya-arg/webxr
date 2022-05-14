@@ -22,31 +22,31 @@ export default function HomeContainer(){
       ref.current.rotation.y += 0.01
     })
     return <mesh ref={ref} {...props}>
-    <sphereBufferGeometry args={[1,150,520]}/>
+    <sphereBufferGeometry args={[1,100,500]}/>
     <meshPhysicalMaterial
     map={texture}
     //  color="red"
       // transparent
-      roughness={0}
-      clearcoat={1}
-      transmission={0.8}
-      reflectivity={1}
+      // roughness={0}
+      // clearcoat={1}
+      // transmission={0.8}
+      // reflectivity={1}
       // side={THREE.DoubleSide}
     />
   </mesh>
   }
 
-  const Background = props =>{
-    const texture = useLoader(THREE.TextureLoader,ImageSky)
+  // const Background = props =>{
+  //   const texture = useLoader(THREE.TextureLoader,ImageSky)
 
-    return <primitive object={texture} attach={"background"}/>
-  }
-  const Floor = (props)=>{
-    return <mesh {...props}>
-    <boxBufferGeometry args={[10,0,10]} position={[5,5,0]} color="#FFF"/>
-    <meshPhysicalMaterial color="white"/>
-  </mesh>
-  }
+  //   return <primitive object={texture} attach={"background"}/>
+  // }
+  // const Floor = (props)=>{
+  //   return <mesh {...props}>
+  //   <boxBufferGeometry args={[10,0,10]} position={[5,5,0]} color="#FFF"/>
+  //   <meshPhysicalMaterial color="white"/>
+  // </mesh>
+  // }
 
   const Bulb = props =>{
     return <mesh {...props}>
@@ -64,14 +64,15 @@ export default function HomeContainer(){
     // }}
     >
       <ambientLight intensity={0.2} />
-      <Bulb position={[0,2,0]}/>
+      <Bulb position={[-1,2,0]}/>
       <Orbit />
       <axesHelper args={[5]}/>
       <Suspense fallback={null}>
-      <Box position={[0,0,0]}/>
+      <Box position={[-2,1,-1]}/>
       </Suspense>
       <Suspense fallback={null}>
+      {/* <Background /> */}
       </Suspense>
-      <Floor color="#FFF" position={[0,-0.5,0]}/>
+      {/* <Floor color="#FFF" position={[0,-0.5,0]}/> */}
     </ARCanvas>
 };
